@@ -1,20 +1,25 @@
-variable "region" {
-  description = "The AWS region to deploy resources in"
-  type        = string
+variable "environment" {
+  description = "Deployment Environment"
+  type = string
 }
 
-variable "ami" {
-  description = "The AMI ID to use for the EC2 instance"
-  type        = string
+variable "vpc_cidr" {
+  description = "CIDR block of the vpc"
+  type = string
 }
 
-variable "instance_type" {
-  description = "The instance type to use for the EC2 instance"
-  type        = string
+variable "public_subnets_cidr" {
+  type        = list
+  description = "CIDR block for Public Subnet"
 }
 
-variable "instance_name" {
-  description = "The name tag to assign to the instance"
-  type        = string
+variable "availability_zones" {
+  type        = list
+  description = "AZ in which all the resources will be deployed"
+}
+
+variable "private_subnets_cidr" {
+  type        = list
+  description = "CIDR block for Private Subnet"
 }
 
